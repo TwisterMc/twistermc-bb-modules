@@ -84,20 +84,11 @@ FLBuilder::register_module('BBSlickSlider', array(
         'title'         => __('Photos', 'fl-builder'), // Tab title
         'sections'      => array( // Tab Sections
             'general'       => array( // Section
-                'title'         => __('SlickSlider Settings', 'fl-builder'), // Section Title
+                'title'         => __('Photo Settings', 'fl-builder'), // Section Title
                 'fields'        => array( // Section Fields
                     'multiple_photos_field'     => array(
                         'type'          => 'multiple-photos',
                         'label'         => __('Photos', 'fl-builder'),
-                    ),
-                    'forceImageSize'   => array(
-                        'type'          => 'select',
-                        'label'         => __('Force Images to Full Width', 'fl-builder'),
-                        'default'       => 'false',
-                        'options'       => array(
-                            'true'      => __('Yes', 'fl-builder'),
-                            'false'      => __('No', 'fl-builder')
-                        )
                     ),
                     'showCaptions'   => array(
                         'type'          => 'select',
@@ -108,6 +99,74 @@ FLBuilder::register_module('BBSlickSlider', array(
                             'false'      => __('No', 'fl-builder')
                         )
                     ),
+                    'oneSlide'   => array(
+                        'type'          => 'select',
+                        'label'         => __('Show # Slides', 'fl-builder'),
+                        'options'       => array(
+                            'true'      => __('One', 'fl-builder'),
+                            'false'      => __('Multiple', 'fl-builder')
+                        ),
+                        'toggle'        => array(
+                            'false'      => array(
+                                'sections'      => array( 'multiplePhotoSettings' ),
+                            ),
+                            'true'      => array(
+                                'fields'      => array( 'adaptiveHeight','forceImageSize' ),
+                            ),
+                        )
+                    ),
+                    'forceImageSize'   => array(
+                        'type'          => 'select',
+                        'label'         => __('Force Images to Full Width', 'fl-builder'),
+                        'default'       => 'false',
+                        'options'       => array(
+                            'true'      => __('Yes', 'fl-builder'),
+                            'false'      => __('No', 'fl-builder')
+                        )
+                    ),
+                )
+            ),
+            'multiplePhotoSettings'       => array( // Section
+                'title'         => 'Multiple Photo Settings', // Section Title
+                'fields'        => array( // Section Fields
+                    'centerMode'   => array(
+                        'type'          => 'select',
+                        'label'         => __('Center Mode', 'fl-builder'),
+                        'default'       => 'false',
+                        'options'       => array(
+                            'true'      => __('Yes', 'fl-builder'),
+                            'false'      => __('No', 'fl-builder')
+                        )
+                    ),
+                    'variableWidth'   => array(
+                        'type'          => 'select',
+                        'label'         => __('Variable Width', 'fl-builder'),
+                        'default'       => 'false',
+                        'options'       => array(
+                            'true'      => __('Yes', 'fl-builder'),
+                            'false'      => __('No', 'fl-builder')
+                        )
+                    ),
+                    'slidesToShow'   => array(
+                        'type'          => 'text',
+                        'label'         => __('Slides to Show', 'fl-builder'),
+                        'default'       => '1',
+                    ),
+                    'slidesToScroll'   => array(
+                        'type'          => 'text',
+                        'label'         => __('Slides to Scroll', 'fl-builder'),
+                        'default'       => '1'
+                    ),
+                )
+            )
+        )
+    ),
+    'toggle'       => array( // Tab
+        'title'         => __('Controls', 'fl-builder'), // Tab title
+        'sections'      => array( // Tab Sections
+            'general'       => array( // Section
+                'title'         => __('Slideshow Controls', 'fl-builder'), // Section Title
+                'fields'        => array( // Section Fields
                     'autoPlay'   => array(
                         'type'          => 'select',
                         'label'         => __('Auto Play', 'fl-builder'),
@@ -115,6 +174,11 @@ FLBuilder::register_module('BBSlickSlider', array(
                         'options'       => array(
                             'true'      => __('Yes', 'fl-builder'),
                             'false'      => __('No', 'fl-builder')
+                        ),
+                        'toggle'        => array(
+                            'true'      => array(
+                                'fields'        => array( 'autoPlaySpeed' ),
+                            ),
                         )
                     ),
                     'autoPlaySpeed'   => array(
@@ -123,47 +187,9 @@ FLBuilder::register_module('BBSlickSlider', array(
                         'default'       => '3000',
                         'description'   => 'milliseconds'
                     ),
-                    'adaptiveHeight'   => array(
-                        'type'          => 'select',
-                        'label'         => __('Adaptive Height', 'fl-builder'),
-                        'default'       => 'false',
-                        'options'       => array(
-                            'true'      => __('Yes', 'fl-builder'),
-                            'false'      => __('No', 'fl-builder')
-                        )
-                    ),
-                    'fixedHeight'   => array(
-                        'type'          => 'select',
-                        'label'         => __('Fixed Height', 'fl-builder'),
-                        'default'       => 'false',
-                        'options'       => array(
-                            'true'      => __('Yes', 'fl-builder'),
-                            'false'      => __('No', 'fl-builder')
-                        ),
-                        'toggle'        => array(
-                            'true'      => array(
-                                'fields'        => array( 'fixedHeightSize' ),
-                            ),
-                        )
-                    ),
-                    'fixedHeightSize'   => array(
-                        'type'          => 'text',
-                        'label'         => __('Fixed Height Size', 'fl-builder'),
-                        'default'       => '500',
-                        'description'   => 'pixels',
-                    ),
                     'arrows'   => array(
                         'type'          => 'select',
                         'label'         => __('Show Arrows', 'fl-builder'),
-                        'default'       => 'true',
-                        'options'       => array(
-                            'true'      => __('Yes', 'fl-builder'),
-                            'false'      => __('No', 'fl-builder')
-                        )
-                    ),
-                    'dots'   => array(
-                        'type'          => 'select',
-                        'label'         => __('Show Dots', 'fl-builder'),
                         'default'       => 'true',
                         'options'       => array(
                             'true'      => __('Yes', 'fl-builder'),
@@ -179,6 +205,20 @@ FLBuilder::register_module('BBSlickSlider', array(
                             'false'      => __('No', 'fl-builder')
                         )
                     ),
+                    'dots'   => array(
+                        'type'          => 'select',
+                        'label'         => __('Show Dots', 'fl-builder'),
+                        'default'       => 'true',
+                        'options'       => array(
+                            'true'      => __('Yes', 'fl-builder'),
+                            'false'      => __('No', 'fl-builder')
+                        ),
+                        'toggle'        => array(
+                            'true'      => array(
+                                'fields'        => array( 'pauseOnDotsHover' ),
+                            ),
+                        )
+                    ),
                     'pauseOnDotsHover'   => array(
                         'type'          => 'select',
                         'label'         => __('Pause on Dots Hover', 'fl-builder'),
@@ -188,23 +228,35 @@ FLBuilder::register_module('BBSlickSlider', array(
                             'false'      => __('No', 'fl-builder')
                         )
                     ),
-                    'variableWidth'   => array(
+                )
+            ),
+        )
+    ),
+    'multiple'      => array( // Tab
+        'title'         => __('Settings', 'fl-builder'), // Tab title
+        'sections'      => array( // Tab Sections
+            'general'       => array( // Section
+                'title'         => __('Overall Settings', 'fl-builder'), // Section Title
+                'fields'        => array( // Section Fields
+                    'adaptiveHeight'   => array(
                         'type'          => 'select',
-                        'label'         => __('Variable Width', 'fl-builder'),
+                        'label'         => __('Adaptive Height', 'fl-builder'),
                         'default'       => 'false',
                         'options'       => array(
                             'true'      => __('Yes', 'fl-builder'),
                             'false'      => __('No', 'fl-builder')
+                        ),
+                        'toggle'        => array(
+                            'false'      => array(
+                                'fields'        => array( 'fixedHeightSize' ),
+                            ),
                         )
                     ),
-                    'centerMode'   => array(
-                        'type'          => 'select',
-                        'label'         => __('Center Mode', 'fl-builder'),
-                        'default'       => 'false',
-                        'options'       => array(
-                            'true'      => __('Yes', 'fl-builder'),
-                            'false'      => __('No', 'fl-builder')
-                        )
+                    'fixedHeightSize'   => array(
+                        'type'          => 'text',
+                        'label'         => __('Fixed Height Size', 'fl-builder'),
+                        'default'       => '500',
+                        'description'   => 'pixels',
                     ),
                     'fade'   => array(
                         'type'          => 'select',
@@ -224,86 +276,10 @@ FLBuilder::register_module('BBSlickSlider', array(
                             'false'      => __('No', 'fl-builder')
                         )
                     ),
-                    'slidesToShow'   => array(
-                        'type'          => 'text',
-                        'label'         => __('Slides to Show', 'fl-builder'),
-                        'default'       => '1'
-                    ),
-                    'slidesToScroll'   => array(
-                        'type'          => 'text',
-                        'label'         => __('Slides to Scroll', 'fl-builder'),
-                        'default'       => '1'
-                    ),
-                )
-            )
-        )
-    ),
-    'toggle'       => array( // Tab
-        'title'         => __('Toggle', 'fl-builder'), // Tab title
-        'sections'      => array( // Tab Sections
-            'general'       => array( // Section
-                'title'         => __('Toggle Example', 'fl-builder'), // Section Title
-                'fields'        => array( // Section Fields
-                    'toggle_me'     => array(
-                        'type'          => 'select',
-                        'label'         => __('Toggle Me!', 'fl-builder'),
-                        'default'       => 'option-1',
-                        'options'       => array(
-                            'option-1'      => __('Option 1', 'fl-builder'),
-                            'option-2'      => __('Option 2', 'fl-builder')
-                        ),
-                        'toggle'        => array(
-                            'option-1'      => array(
-                                'fields'        => array('toggle_text', 'toggle_text2'),
-                                'sections'      => array('toggle_section')
-                            ),
-                            'option-2'      => array()
-                        )
-                    ),
-                    'toggle_text'   => array(
-                        'type'          => 'text',
-                        'label'         => __('Hide Me!', 'fl-builder'),
-                        'default'       => '',
-                        'description'   => 'I get hidden when you toggle the select above.'
-                    ),
-                    'toggle_text2'   => array(
-                        'type'          => 'text',
-                        'label'         => __('Me Too!', 'fl-builder'),
-                        'default'       => ''
-                    )
                 )
             ),
-            'toggle_section' => array( // Section
-                'title'         => __('Hide This Section!', 'fl-builder'), // Section Title
-                'fields'        => array( // Section Fields
-                    'some_text'     => array(
-                        'type'          => 'text',
-                        'label'         => __('Text', 'fl-builder'),
-                        'default'       => ''
-                    )
-                )
-            )
         )
     ),
-    'multiple'      => array( // Tab
-        'title'         => __('Multiple', 'fl-builder'), // Tab title
-        'sections'      => array( // Tab Sections
-            'general'       => array( // Section
-                'title'         => __('Multiple Example', 'fl-builder'), // Section Title
-                'fields'        => array( // Section Fields
-                    'test'          => array(
-                        'type'          => 'text',
-                        'label'         => __('Multiple Test', 'fl-builder'),
-                        'multiple'      => true // Doesn't work with editor or photo fields
-                    )
-                )
-            )
-        )
-    ),
-    'include'       => array( // Tab
-        'title'         => __('Include', 'fl-builder'), // Tab title
-        'file'          => TMC_BB_DIR . 'slick/includes/settings-example.php'
-    )
 ));
 
 /**

@@ -87,7 +87,7 @@ Arrows
     left: 50px;
 }
 
-<?php if ($settings->forceImageSize == 'true') { ?>
+<?php if ($settings->forceImageSize == 'true' && $settings->oneSlide == 'false') { ?>
 /* ---------------------------------------------------------------------
 Force Image Size
 ------------------------------------------------------------------------ */
@@ -109,7 +109,7 @@ Photo Captions
 }
 <?php } ?>
 
-<?php if ($settings->fixedHeight == 'true') { ?>
+<?php if ($settings->adaptiveHeight == 'false') { ?>
 /* ---------------------------------------------------------------------
 Fixed Height Size
 ------------------------------------------------------------------------ */
