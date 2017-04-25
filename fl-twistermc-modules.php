@@ -3,7 +3,7 @@
  * Plugin Name: TwisterMc BB Modules
  * Plugin URI: https://www.twistermc.com
  * Description: Custom modules to extend BeaverBuilder
- * Version: 0.1
+ * Version: 0.2
  * Author: TwisterMc
  * Author URI: http://www.twistermc.com
  */
