@@ -10,14 +10,11 @@
  *
  * Example:
  */
-console.log('Module ID: <?php echo $id; ?>');
-console.log('Text: <?php echo $settings->oneSlide; ?>');
 
 (function($){
 
-
-var $slickSlider_bb = $('.slickWrapper_bb');
-var $slickSlider_bb_pauseButton = $( '.js-slickModule_bb_Pause' );
+var $slickSlider_bb = $(".fl-node-<?php echo $id; ?> .slickWrapper_bb");
+var $slickSlider_bb_pauseButton = $(".fl-node-<?php echo $id; ?> .js-slickModule_bb_Pause");
 var $slickSlider_bb_autoplay = <?php echo $settings->autoPlay; ?>;
 var $slickSlider_bb_autoplaySpeed = <?php echo $settings->autoPlaySpeed; ?>;
 var $slickSlider_bb_adaptiveHeight = <?php echo $settings->adaptiveHeight; ?>;

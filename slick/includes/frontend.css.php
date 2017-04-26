@@ -11,10 +11,6 @@
  * Example: 
  */
 
-.fl-node-<?php echo $id; ?> {
-/*    font-size: */<?php //echo $settings->text_field; ?>/*px;*/
-}
-
 <?php $module->example_method(); ?>
 
 .tmc_isVisibilyHidden {
@@ -91,7 +87,7 @@ Arrows
 /* ---------------------------------------------------------------------
 Force Image Size
 ------------------------------------------------------------------------ */
-.slick-slide img {
+.fl-node-<?php echo $id; ?> .slick-slide img {
     width: 100%;
     height: auto;
 }
@@ -101,7 +97,7 @@ Force Image Size
 /* ---------------------------------------------------------------------
 Photo Captions
 ------------------------------------------------------------------------ */
-.slickPhotoCaption {
+.fl-node-<?php echo $id; ?> .slickPhotoCaption {
     background-color: #000;
     padding: 10px;
     text-align: center;
@@ -113,11 +109,11 @@ Photo Captions
 /* ---------------------------------------------------------------------
 Fixed Height Size
 ------------------------------------------------------------------------ */
-.slick-slide {
+.fl-node-<?php echo $id; ?> .slick-slide {
     height: <?php echo $settings->fixedHeightSize; ?>px;
 }
 
-.slick-slide img {
+.fl-node-<?php echo $id; ?> .slick-slide img {
     max-height: 100%;
 }
 <?php } ?>
