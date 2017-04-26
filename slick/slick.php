@@ -33,7 +33,7 @@ class BBSlickSlider extends FLBuilderModule {
         
         // Register and enqueue your own
         $this->add_css( 'slick-slider-css-cdn', '//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css', array(), '' );
-        $this->add_js( 'slick-slider-js-cdn', '//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js', array('jquery'), '', false );
+        $this->add_js( 'slick-slider-js-cdn', TMC_BB_URL . '/slick/js/slick.js', array('jquery'), '', false );
 
     }
 
