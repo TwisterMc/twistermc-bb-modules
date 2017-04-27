@@ -263,7 +263,7 @@ FLBuilder::register_module('BBSlickSlider', array(
                     'arrowHoverBackgroundColor'   => array(
                         'type'          => 'color',
                         'label'         => __('Arrow Hover Background Color', 'fl-builder'),
-                        'default'       => '000000',
+                        'default'       => '689BCA',
                         'show_reset'    => true
                     ),
                     'dotSize'   => array(
@@ -275,12 +275,11 @@ FLBuilder::register_module('BBSlickSlider', array(
                     'dotColor'   => array(
                         'type'          => 'color',
                         'label'         => __('Dot Color', 'fl-builder'),
-                        'default'       => 'ffffff',
+                        'default'       => '000000',
                     ),
                     'dotBackgroundColor'   => array(
                         'type'          => 'color',
                         'label'         => __('Dot Background Color', 'fl-builder'),
-                        'default'       => '333333',
                         'show_reset'    => true
                     ),
                     'dotActiveColor'   => array(
@@ -302,7 +301,7 @@ FLBuilder::register_module('BBSlickSlider', array(
                     'dotHoverBackgroundColor'   => array(
                         'type'          => 'color',
                         'label'         => __('Dot Hover Background Color', 'fl-builder'),
-                        'default'       => '000000',
+                        'default'       => '689BCA',
                         'show_reset'    => true
                     )
                 )
