@@ -32,16 +32,35 @@ Slick
     position: relative;
 }
 
+.slickModule_bb button,
 .slickModule_bb button:hover,
+.slickModule_bb button:active,
 .slick-active button,
-.slick-active button:focus {
-    background-color: #333;
+.slick-active button:focus,
+.slick-active button:active {
+    border: none;
+}
+
+.fl-node-<?php echo $id; ?> .slick-arrow,
+.fl-node-<?php echo $id; ?> .slickModule_bb_Pause {
+    <?php if ($settings->arrowBackgroundColor != '') {  ?>background: #<?php echo $settings->arrowBackgroundColor; ?>;<?php } else { ?> background: transparent; <? } ?>
+    color: #<?php echo $settings->arrowColor; ?>;
+}
+
+.fl-node-<?php echo $id; ?> .slick-arrow:before,
+.fl-node-<?php echo $id; ?> .slickModule_bb_Pause:before {
+    font-size: <?php echo $settings->arrowSize; ?>px;
+}
+
+.fl-node-<?php echo $id; ?> .slick-arrow:hover,
+.fl-node-<?php echo $id; ?> .slickModule_bb_Pause:hover {
+    <?php if ($settings->arrowHoverBackgroundColor != '') {  ?>background: #<?php echo $settings->arrowHoverBackgroundColor; ?>;<?php } else { ?> background: transparent; <? } ?>
+    color: #<?php echo $settings->arrowHoverColor; ?>;
 }
 
 /* ---------------------------------------------------------------------
 Dots
 ------------------------------------------------------------------------ */
-
 .slick-dots {
     text-align: center;
 }
@@ -51,8 +70,21 @@ Dots
     padding: 5px 5px;
 }
 
-.slick-dots button {
-    border-radius: 50px;
+.fl-node-<?php echo $id; ?> .slick-dots button {
+    <?php if ($settings->dotBackgroundColor != '') {  ?>background: #<?php echo $settings->dotBackgroundColor; ?>;<?php } else { ?> background: transparent; <? } ?>
+    color: #<?php echo $settings->dotColor; ?>;
+    font-size: <?php echo $settings->dotSize; ?>px;
+
+}
+
+.fl-node-<?php echo $id; ?> .slick-dots button:hover {
+    <?php if ($settings->dotHoverBackgroundColor != '') {  ?>background: #<?php echo $settings->dotHoverBackgroundColor; ?>;<?php } else { ?> background: transparent; <? } ?>
+    color: #<?php echo $settings->dotHoverColor; ?>;
+}
+
+.fl-node-<?php echo $id; ?> .slick-active button {
+    <?php if ($settings->dotActiveBackgroundColor != '') {  ?>background: #<?php echo $settings->dotActiveBackgroundColor; ?>;<?php } else { ?> background: transparent; <? } ?>
+    color: #<?php echo $settings->dotActiveColor; ?>;
 }
 
 /* ---------------------------------------------------------------------
@@ -74,13 +106,16 @@ Arrows
 .slick-arrow,
 .slick-arrow:active {
     position: absolute;
-    top: 10px;
-    left: 10px;
+    top: 40%;
     z-index: 10;
 }
 
+.slick-arrow.slick-prev {
+    left: 10px;
+}
+
 .slick-arrow.slick-next {
-    left: 50px;
+    right: 10px;
 }
 
 <?php if ($settings->forceImageSize == 'true' && $settings->oneSlide == 'false') { ?>

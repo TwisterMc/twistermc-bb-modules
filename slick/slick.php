@@ -232,6 +232,83 @@ FLBuilder::register_module('BBSlickSlider', array(
             ),
         )
     ),
+    'design'      => array( // Tab
+        'title'         => __('Design', 'fl-builder'), // Tab title
+        'sections'      => array( // Tab Sections
+            'general'       => array( // Section
+                'title'         => __('Tweak the Design', 'fl-builder'), // Section Title
+                'fields'        => array( // Section Fields
+                    'arrowSize'   => array(
+                        'type'          => 'text',
+                        'label'         => __('Arrow Size', 'fl-builder'),
+                        'default'       => '20',
+                        'description'   => 'pixels',
+                    ),
+                    'arrowColor'   => array(
+                        'type'          => 'color',
+                        'label'         => __('Arrow Color', 'fl-builder'),
+                        'default'       => 'ffffff'
+                    ),
+                    'arrowBackgroundColor'   => array(
+                        'type'          => 'color',
+                        'label'         => __('Arrow Background Color', 'fl-builder'),
+                        'default'       => '333333',
+                        'show_reset'    => true
+                    ),
+                    'arrowHoverColor'   => array(
+                        'type'          => 'color',
+                        'label'         => __('Arrow Hover Color', 'fl-builder'),
+                        'default'       => 'ffffff',
+                    ),
+                    'arrowHoverBackgroundColor'   => array(
+                        'type'          => 'color',
+                        'label'         => __('Arrow Hover Background Color', 'fl-builder'),
+                        'default'       => '000000',
+                        'show_reset'    => true
+                    ),
+                    'dotSize'   => array(
+                        'type'          => 'text',
+                        'label'         => __('Dot Size', 'fl-builder'),
+                        'default'       => '14',
+                        'description'   => 'pixels',
+                    ),
+                    'dotColor'   => array(
+                        'type'          => 'color',
+                        'label'         => __('Dot Color', 'fl-builder'),
+                        'default'       => 'ffffff',
+                    ),
+                    'dotBackgroundColor'   => array(
+                        'type'          => 'color',
+                        'label'         => __('Dot Background Color', 'fl-builder'),
+                        'default'       => '333333',
+                        'show_reset'    => true
+                    ),
+                    'dotActiveColor'   => array(
+                        'type'          => 'color',
+                        'label'         => __('Dot Active Color', 'fl-builder'),
+                        'default'       => 'ffffff',
+                    ),
+                    'dotActiveBackgroundColor'   => array(
+                        'type'          => 'color',
+                        'label'         => __('Dot Active Background Color', 'fl-builder'),
+                        'default'       => '333333',
+                        'show_reset'    => true
+                    ),
+                    'dotHoverColor'   => array(
+                        'type'          => 'color',
+                        'label'         => __('Dot Hover Color', 'fl-builder'),
+                        'default'       => 'ffffff',
+                    ),
+                    'dotHoverBackgroundColor'   => array(
+                        'type'          => 'color',
+                        'label'         => __('Dot Hover Background Color', 'fl-builder'),
+                        'default'       => '000000',
+                        'show_reset'    => true
+                    )
+                )
+            ),
+        )
+    ),
     'multiple'      => array( // Tab
         'title'         => __('Settings', 'fl-builder'), // Tab title
         'sections'      => array( // Tab Sections
