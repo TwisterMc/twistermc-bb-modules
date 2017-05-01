@@ -29,6 +29,7 @@ var $slickSlider_bb_infinite = <?php echo $settings->infinite; ?>;
 var $slickSlider_bb_slidesToShow = <?php echo $settings->slidesToShow; ?>;
 var $slickSlider_bb_slidesToScroll = <?php echo $settings->slidesToScroll; ?>;
 var $slickSlider_bb_oneSlide = <?php echo $settings->oneSlide; ?>;
+var $slickSlider_bb_verticalCarousel = <?php echo $settings->verticalCarousel; ?>;
 
     $slickSlider_bb.slick({
         autoplay: $slickSlider_bb_autoplay,
@@ -37,7 +38,7 @@ var $slickSlider_bb_oneSlide = <?php echo $settings->oneSlide; ?>;
         dots: $slickSlider_bb_dots,
         pauseOnHover: $slickSlider_bb_pauseOnHover,
         pauseOnDotsHover: $slickSlider_bb_pauseOnDotsHover,
-        fade: $slickSlider_bb_fade,
+        vertical: $slickSlider_bb_verticalCarousel,
         infinite: $slickSlider_bb_infinite,
         nextArrow: '<button class="fa fa-angle-right slick-arrow slick-next" aria-hidden="true"><span class="tmc_isVisibilyHidden">Next</span></button>',
         prevArrow: '<button class="fa fa-angle-left slick-arrow slick-prev" aria-hidden="true"><span class="tmc_isVisibilyHidden">Previous</span></button>',
@@ -45,6 +46,11 @@ var $slickSlider_bb_oneSlide = <?php echo $settings->oneSlide; ?>;
 
     if ($slickSlider_bb_oneSlide == true) {
         $slickSlider_bb.slick("slickSetOption", "adaptiveHeight", $slickSlider_bb_adaptiveHeight, false);
+    }
+
+    /* only use fade setting when using a horizontal carousel */
+    if ($slickSlider_bb_verticalCarousel == false) {
+        $slickSlider_bb.slick("slickSetOption", "vertical", $slickSlider_bb_verticalCarousel, false);
     }
 
     if ($slickSlider_bb_oneSlide == false) {

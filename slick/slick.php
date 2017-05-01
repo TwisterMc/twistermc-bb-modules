@@ -352,6 +352,20 @@ FLBuilder::register_module('BBSlickSlider', array(
                             'false'      => __('No', 'fl-builder')
                         )
                     ),
+                    'verticalCarousel'   => array(
+                        'type'          => 'select',
+                        'label'         => __('Scroll', 'fl-builder'),
+                        'default'       => 'false',
+                        'options'       => array(
+                            'true'      => __('Vertical', 'fl-builder'),
+                            'false'      => __('Horizontal', 'fl-builder')
+                        ),
+                        'toggle'        => array(
+                            'false'      => array(
+                                'fields'        => array( 'fade' ),
+                            ),
+                        )
+                    ),
                 )
             ),
         )
