@@ -136,6 +136,11 @@ FLBuilder::register_module('BBSlickSlider', array(
                         'options'       => array(
                             'true'      => __('Yes', 'fl-builder'),
                             'false'      => __('No', 'fl-builder')
+                        ),
+                        'toggle'        => array(
+                            'false'      => array(
+                                'fields'        => array( 'slidesToScroll' ),
+                            ),
                         )
                     ),
                     'variableWidth'   => array(
