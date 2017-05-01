@@ -50,7 +50,7 @@ var $slickSlider_bb_verticalCarousel = <?php echo $settings->verticalCarousel; ?
 
     /* only use fade setting when using a horizontal carousel */
     if ($slickSlider_bb_verticalCarousel == false) {
-        $slickSlider_bb.slick("slickSetOption", "vertical", $slickSlider_bb_verticalCarousel, false);
+        $slickSlider_bb.slick("slickSetOption", "fade", $slickSlider_bb_fade, false);
     }
 
     if ($slickSlider_bb_oneSlide == false) {
