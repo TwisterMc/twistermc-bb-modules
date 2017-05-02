@@ -166,4 +166,46 @@ FLBuilder::register_module('BBFullImage', array(
             )
         )
     ),
+    'link'       => array( // Tab
+        'title'         => __('Link', 'fl-builder'), // Tab title
+        'sections'      => array( // Tab Sections
+            'general-link'       => array( // Section
+                'title'         => __('Link', 'fl-builder'), // Section Title
+                'fields'        => array( // Section Fields
+                    'linkImage'   => array(
+                        'type'          => 'select',
+                        'label'         => __('Link Image', 'fl-builder'),
+                        'default'       => 'false',
+                        'options'       => array(
+                            'true'      => __('Yes', 'fl-builder'),
+                            'false'      => __('No', 'fl-builder')
+                        ),
+                        'toggle'        => array(
+                            'true'      => array(
+                                'sections'      => array( 'linkdetails' ),
+                            ),
+                        )
+                    ),
+                )
+            ),
+            'linkdetails'       => array( // Section
+                'title'         => __('Link Details'), // Section Title
+                'fields'        => array( // Section Fields
+                    'linkurl'   => array(
+                        'type'          => 'link',
+                        'label'         => __('Link', 'fl-builder'),
+                    ),
+                    'linktarget'   => array(
+                        'type'          => 'select',
+                        'label'         => __('Target', 'fl-builder'),
+                        'default'       => '_self',
+                        'options'       => array(
+                            '_self'      => __('Same Window', 'fl-builder'),
+                            '_blank'      => __('New Window', 'fl-builder'),
+                        )
+                    ),
+                )
+            )
+        )
+    ),
 ));

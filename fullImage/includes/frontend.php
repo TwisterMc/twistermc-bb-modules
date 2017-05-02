@@ -16,7 +16,9 @@
 ?>
 
 <div class="tm_bb_fullImage">
+    <?php if ($settings->linkImage == 'true' && $settings->linkurl != '') { echo '<a href="' . $settings->linkurl .'" target="' . $settings->linktarget .'">'; } ?>
     <?php echo wp_get_attachment_image( $settings->photo_field, $size = 'full', $icon = false, $attr = '' ); ?>
+    <?php if ($settings->linkImage == 'true') { echo '</a>'; } ?>
 </div>
 
 <?php if ($settings->showCaption == 'true') { ?>
