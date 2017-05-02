@@ -42,9 +42,7 @@ var $slickSlider_bb_verticalCarousel = <?php echo $settings->verticalCarousel; ?
             pauseOnDotsHover: $slickSlider_bb_pauseOnDotsHover,
             vertical: $slickSlider_bb_verticalCarousel,
             infinite: $slickSlider_bb_infinite,
-            adaptiveHeight: $slickSlider_bb_adaptiveHeight,
-            nextArrow: '<button class="fa fa-angle-right slick-arrow slick-next" aria-hidden="true"><span class="tmc_isVisibilyHidden">Next</span></button>',
-            prevArrow: '<button class="fa fa-angle-left slick-arrow slick-prev" aria-hidden="true"><span class="tmc_isVisibilyHidden">Previous</span></button>',
+            adaptiveHeight: $slickSlider_bb_adaptiveHeight
         });
     } else {
         $slickSlider_bb.slick({
@@ -59,16 +57,24 @@ var $slickSlider_bb_verticalCarousel = <?php echo $settings->verticalCarousel; ?
             slidesToShow: $slickSlider_bb_slidesToShow,
             slidesToScroll: $slickSlider_bb_slidesToScroll,
             variableWidth: $slickSlider_bb_variableWidth,
-            centerMode: $slickSlider_bb_centerMode,
-            nextArrow: '<button class="fa fa-angle-right slick-arrow slick-next" aria-hidden="true"><span class="tmc_isVisibilyHidden">Next</span></button>',
-            prevArrow: '<button class="fa fa-angle-left slick-arrow slick-prev" aria-hidden="true"><span class="tmc_isVisibilyHidden">Previous</span></button>',
+            centerMode: $slickSlider_bb_centerMode
         });
     }
+
+    $ss_nextArrow = '<button class="fa fa-chevron-right slick-arrow slick-next" aria-hidden="true"><span class="tmc_isVisibilyHidden">Next</span></button>';
+    $ss_prevArrow = '<button class="fa fa-chevron-left slick-arrow slick-prev" aria-hidden="true"><span class="tmc_isVisibilyHidden">Previous</span></button>';
+    $ss_downArrow = '<button class="fa fa-chevron-down slick-arrow slick-next" aria-hidden="true"><span class="tmc_isVisibilyHidden">Next</span></button>';
+    $ss_upArrow = '<button class="fa fa-chevron-up slick-arrow slick-prev" aria-hidden="true"><span class="tmc_isVisibilyHidden">Previous</span></button>';
 
 
     /* only use fade setting when using a horizontal carousel */
     if ($slickSlider_bb_verticalCarousel == false) {
         $slickSlider_bb.slick("slickSetOption", "fade", $slickSlider_bb_fade, false);
+        $slickSlider_bb.slick("slickSetOption", "nextArrow", $ss_nextArrow, true);
+        $slickSlider_bb.slick("slickSetOption", "prevArrow", $ss_prevArrow, true);
+    } else {
+        $slickSlider_bb.slick("slickSetOption", "nextArrow", $ss_downArrow, true);
+        $slickSlider_bb.slick("slickSetOption", "prevArrow", $ss_upArrow, true);
     }
 
     if ($slickSlider_bb_autoplay === false) {

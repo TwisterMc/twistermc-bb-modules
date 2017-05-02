@@ -7,6 +7,9 @@ This is a free plugin for Beaver Builder that I'll be adding my custom modules t
 My first module is a Slick slider module. The carousels that come with Beaver Builder are OK, but they leave a lot to be desired. That's why I'm integrating Slick.
 
 ## Release Notes
+### Version 0.6
+* Added a new module for full width images.
+
 ### Version 0.5
 * Added vertical carousel mode.
 * Re-worked the carousel inits to ensure the right number of dots show when scrolling by more than 1.

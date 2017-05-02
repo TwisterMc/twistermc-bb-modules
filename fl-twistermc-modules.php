@@ -3,7 +3,7 @@
  * Plugin Name: TwisterMc BB Modules
  * Plugin URI: https://www.twistermc.com
  * Description: Custom modules to extend BeaverBuilder
- * Version: 0.5
+ * Version: 0.6
  * Author: TwisterMc
  * Author URI: http://www.twistermc.com
  */
@@ -16,6 +16,7 @@ define( 'TMC_BB_URL', plugins_url( '/', __FILE__ ) );
 function fl_load_module_bbtwistermc() {
 	if ( class_exists( 'FLBuilder' ) ) {
 	    require_once 'slick/slick.php';
+	    require_once 'fullImage/fullImage.php';
 	}
 }
 add_action( 'init', 'fl_load_module_bbtwistermc');
