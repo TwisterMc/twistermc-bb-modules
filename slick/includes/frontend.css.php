@@ -1,14 +1,14 @@
 /**
- * This file should contain frontend styles that 
+ * This file should contain frontend styles that
  * will be applied to individual module instances.
  *
- * You have access to three variables in this file: 
- * 
+ * You have access to three variables in this file:
+ *
  * $module An instance of your module class.
  * $id The module's ID.
  * $settings The module's settings.
  *
- * Example: 
+ * Example:
  */
 
 <?php $module->example_method(); ?>
@@ -43,7 +43,7 @@ Slick
 
 .fl-node-<?php echo $id; ?> .slick-arrow,
 .fl-node-<?php echo $id; ?> .slickModule_bb_Pause {
-    <?php if ($settings->arrowBackgroundColor != '') {  ?>background: #<?php echo $settings->arrowBackgroundColor; ?>;<?php } else { ?> background: transparent; <? } ?>
+    <?php if ($settings->arrowBackgroundColor != '') {  ?>background: #<?php echo $settings->arrowBackgroundColor; ?>;<?php } else { ?> background: transparent; <?php } ?>
     color: #<?php echo $settings->arrowColor; ?>;
 }
 
@@ -54,7 +54,7 @@ Slick
 
 .fl-node-<?php echo $id; ?> .slick-arrow:hover,
 .fl-node-<?php echo $id; ?> .slickModule_bb_Pause:hover {
-    <?php if ($settings->arrowHoverBackgroundColor != '') {  ?>background: #<?php echo $settings->arrowHoverBackgroundColor; ?>;<?php } else { ?> background: transparent; <? } ?>
+    <?php if ($settings->arrowHoverBackgroundColor != '') {  ?>background: #<?php echo $settings->arrowHoverBackgroundColor; ?>;<?php } else { ?> background: transparent; <?php } ?>
     color: #<?php echo $settings->arrowHoverColor; ?>;
 }
 
@@ -71,19 +71,19 @@ Dots
 }
 
 .fl-node-<?php echo $id; ?> .slick-dots button {
-    <?php if ($settings->dotBackgroundColor != '') {  ?>background: #<?php echo $settings->dotBackgroundColor; ?>;<?php } else { ?> background: transparent; <? } ?>
+    <?php if ($settings->dotBackgroundColor != '') {  ?>background: #<?php echo $settings->dotBackgroundColor; ?>;<?php } else { ?> background: transparent; <?php } ?>
     color: #<?php echo $settings->dotColor; ?>;
     font-size: <?php echo $settings->dotSize; ?>px;
 
 }
 
 .fl-node-<?php echo $id; ?> .slick-dots button:hover {
-    <?php if ($settings->dotHoverBackgroundColor != '') {  ?>background: #<?php echo $settings->dotHoverBackgroundColor; ?>;<?php } else { ?> background: transparent; <? } ?>
+    <?php if ($settings->dotHoverBackgroundColor != '') {  ?>background: #<?php echo $settings->dotHoverBackgroundColor; ?>;<?php } else { ?> background: transparent; <?php } ?>
     color: #<?php echo $settings->dotHoverColor; ?>;
 }
 
 .fl-node-<?php echo $id; ?> .slick-active button {
-    <?php if ($settings->dotActiveBackgroundColor != '') {  ?>background: #<?php echo $settings->dotActiveBackgroundColor; ?>;<?php } else { ?> background: transparent; <? } ?>
+    <?php if ($settings->dotActiveBackgroundColor != '') {  ?>background: #<?php echo $settings->dotActiveBackgroundColor; ?>;<?php } else { ?> background: transparent; <?php } ?>
     color: #<?php echo $settings->dotActiveColor; ?>;
 }
 
