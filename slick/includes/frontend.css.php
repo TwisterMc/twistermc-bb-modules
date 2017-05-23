@@ -92,7 +92,8 @@ Play/Pause
 ------------------------------------------------------------------------ */
 
 .slickModule_bb_Pause,
-.slickModule_bb_Pause:active {
+.slickModule_bb_Pause:active,
+.slickModule_bb_Pause:focus {
     position: absolute;
     top: 10px;
     right: 10px;
@@ -104,7 +105,8 @@ Arrows
 ------------------------------------------------------------------------ */
 
 .slick-arrow,
-.slick-arrow:active {
+.slick-arrow:active,
+.slick-arrow:focus {
     position: absolute;
     top: 40%;
     z-index: 10;
