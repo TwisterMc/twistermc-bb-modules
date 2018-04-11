@@ -15,17 +15,28 @@
 <div class="slickModule_bb">
     <div class="slickWrapper_bb">
         <?php
-        $arr = $settings->multiple_photos_field;
-        foreach ($arr as &$value) {
-            echo '<li>';
-            echo wp_get_attachment_image( $value, 'large', "", array( "class" => "img-responsive" ) );
 
-            if ($settings->showCaptions == 'true') {
-                $imageInfo = get_post( $value );
-                echo '<div class="slickPhotoCaption">'. $imageInfo->post_excerpt .'</div>';
-            }
+        if ($settings->photoVideo === 'photo') {
+	        $arr = $settings->multiple_photos_field;
+	        foreach ( $arr as &$value ) {
+		        echo '<li>';
+		        echo wp_get_attachment_image( $value, 'large', "", array( "class" => "img-responsive" ) );
 
-            echo '</li>';
+		        if ( $settings->showCaptions == 'true' ) {
+			        $imageInfo = get_post( $value );
+			        echo '<div class="slickPhotoCaption">' . $imageInfo->post_excerpt . '</div>';
+		        }
+
+		        echo '</li>';
+	        }
+        } else {
+	        $arr = $settings->multiple_video_field;
+	        foreach ( $arr as &$value ) {
+		        echo '<li>';
+		        $embed_code = wp_oembed_get($value);
+		        echo $embed_code;
+		        echo '</li>';
+	        }
         }
         ?>
     </div>
