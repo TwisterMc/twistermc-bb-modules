@@ -154,3 +154,21 @@ Fixed Height Size
     max-height: 100%;
 }
 <?php } ?>
+
+/* ---------------------------------------------------------------------
+Embeds
+------------------------------------------------------------------------ */
+.videoWrapper {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+}
+.videoWrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}

@@ -33,8 +33,10 @@
 	        $arr = $settings->multiple_video_field;
 	        foreach ( $arr as &$value ) {
 		        echo '<li>';
-		        $embed_code = wp_oembed_get($value);
+		        echo '<div class="videoWrapper">';
+		        $embed_code = wp_oembed_get($value, array('width'=>800));
 		        echo $embed_code;
+		        echo '</div>';
 		        echo '</li>';
 	        }
         }
