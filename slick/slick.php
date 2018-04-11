@@ -81,7 +81,7 @@ class BBSlickSlider extends FLBuilderModule {
  */
 FLBuilder::register_module('BBSlickSlider', array(
     'general'       => array( // Tab
-        'title'         => __('Photos', 'fl-builder'), // Tab title
+        'title'         => __('Media', 'fl-builder'), // Tab title
         'sections'      => array( // Tab Sections
             'general'       => array( // Section
                 'title'         => __('Photo Settings', 'fl-builder'), // Section Title
