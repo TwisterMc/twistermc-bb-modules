@@ -34,7 +34,7 @@
 	        foreach ( $arr as &$value ) {
 		        echo '<li>';
 		        echo '<div class="videoWrapper">';
-		        $embed_code = wp_oembed_get($value, array('width'=>800));
+		        $embed_code = wp_oembed_get($value);
 		        echo $embed_code;
 		        echo '</div>';
 		        echo '</li>';

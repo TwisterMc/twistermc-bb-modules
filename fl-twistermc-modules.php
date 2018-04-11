@@ -39,3 +39,28 @@ function fl_my_custom_field_assets() {
     }
 }
 add_action( 'wp_enqueue_scripts', 'fl_my_custom_field_assets' );
+
+/**
+ * Adds the `autoplay` query string argument to embedded YouTube videos
+ */
+add_filter('oembed_result','oembed_result', 10, 3);
+
+function oembed_result($html, $url, $args) {
+	return str_replace("?feature=oembed", "?feature=oembed&loop=1&controls=0&showinfo=0&rel=0", $html);
+}
+
+add_filter('oembed_fetch_url','add_video_args',10,3);
+function add_video_args($provider, $url, $args) {
+	if ( strpos($provider, '//vimeo.com/') !== false ) {
+		$args = array(
+			'title' => 0,
+			'byline' => 0,
+			'portrait' => 0,
+			'badge' => 0,
+			//'autoplay' => 1,
+			'loop' => 1,
+		);
+		$provider = add_query_arg( $args, $provider );
+	}
+	return $provider;
+}
