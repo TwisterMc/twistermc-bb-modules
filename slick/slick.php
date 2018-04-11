@@ -84,8 +84,25 @@ FLBuilder::register_module('BBSlickSlider', array(
         'title'         => __('Media', 'fl-builder'), // Tab title
         'sections'      => array( // Tab Sections
             'general'       => array( // Section
-                'title'         => __('Photo Settings', 'fl-builder'), // Section Title
+                'title'         => __('Media Settings', 'fl-builder'), // Section Title
                 'fields'        => array( // Section Fields
+	                'photoVideo'   => array(
+		                'type'          => 'select',
+		                'label'         => __('Type of Media', 'fl-builder'),
+		                'default'       => 'photo',
+		                'options'       => array(
+			                'photo'      => __('Photo', 'fl-builder'),
+			                'video'      => __('Video - YouTube/Vimeo', 'fl-builder')
+		                ),
+		                'toggle'        => array(
+			                'photo'      => array(
+				                'fields'        => array( 'multiple_photos_field','showCaptions','oneSlide','forceImageSize' ),
+			                ),
+			                'video'      => array(
+				                'fields'        => array( 'multiple_video_field' ),
+			                ),
+		                )
+	                ),
                     'multiple_photos_field'     => array(
                         'type'          => 'multiple-photos',
                         'label'         => __('Photos', 'fl-builder'),
@@ -124,6 +141,11 @@ FLBuilder::register_module('BBSlickSlider', array(
                             'false'      => __('No', 'fl-builder')
                         )
                     ),
+	                'multiple_video_field' => array(
+		                'type'          => 'text',
+		                'label'         => __( 'Video URL', 'fl-builder' ),
+		                'multiple'      => true,
+	                ),
                 )
             ),
             'multiplePhotoSettings'       => array( // Section
