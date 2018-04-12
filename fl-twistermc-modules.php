@@ -59,6 +59,7 @@ function add_video_args($provider, $url, $args) {
 			'badge' => 0,
 			//'autoplay' => 1,
 			'loop' => 1,
+			'transparent' => 0
 		);
 		$provider = add_query_arg( $args, $provider );
 	}
