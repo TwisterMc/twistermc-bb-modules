@@ -21,14 +21,6 @@ function fl_load_module_bbtwistermc() {
 }
 add_action( 'init', 'fl_load_module_bbtwistermc');
 
-/**
- * Custom fields
- */
-function bbtwistermc_custom_field( $name, $value, $field ) {
-    echo '<input type="text" class="text text-full" name="' . $name . '" value="' . $value . '" />';
-}
-add_action( 'fl_builder_control_my-custom-field', 'bbtwistermc_custom_field', 1, 3 );
-
 /* ---------------------------------------------------------------------
 Enqueue Vimeo Helper Script
 TODO: This should only be included if we have Vimeo modules
