@@ -46,7 +46,7 @@ add_action( 'wp_enqueue_scripts', 'fl_my_custom_field_assets' );
 add_filter('oembed_result','oembed_result', 10, 3);
 
 function oembed_result($html, $url, $args) {
-	return str_replace("?feature=oembed", "?feature=oembed&loop=1&controls=0&showinfo=0&rel=0", $html);
+	return str_replace("?feature=oembed", "?feature=oembed&loop=1&controls=0&showinfo=0&rel=0&enablejsapi=1", $html);
 }
 
 add_filter('oembed_fetch_url','add_video_args',10,3);

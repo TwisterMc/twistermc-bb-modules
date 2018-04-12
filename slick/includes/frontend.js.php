@@ -98,4 +98,26 @@ var $slickSlider_bb_verticalCarousel = <?php echo $settings->verticalCarousel; ?
 
     });
 
+    $slickSlider_bb.on('beforeChange', function(event, slick, currentSlide, nextSlide){
+        $('iframe').each(function(){
+
+            var srcVideo = $(this)[0].src;
+            isYouTubeVideo = srcVideo.includes('youtube');
+            isVimeoVideo = srcVideo.includes('vimeo');
+
+            // YouTube
+            if (isYouTubeVideo == true) {
+                $(this)[0].contentWindow.postMessage('{"event":"command","func":"' + 'pauseVideo' + '","args":""}', '*');
+            }
+
+            // Vimeo
+            if (isVimeoVideo == true) {
+                var iframe = $(this)[0];
+                var player = $f(iframe);
+                player.api('pause');
+            }
+        });
+    });
+
+
 })(jQuery);

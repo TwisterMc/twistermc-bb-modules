@@ -12,6 +12,9 @@
 
 ?>
 
+<!--For Vimeo-->
+<script src="https://f.vimeocdn.com/js/froogaloop2.min.js"></script>
+
 <div class="slickModule_bb">
     <div class="slickWrapper_bb">
         <?php
