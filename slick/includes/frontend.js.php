@@ -31,30 +31,32 @@ var $slickSlider_bb_slidesToScroll = <?php echo $settings->slidesToScroll; ?>;
 var $slickSlider_bb_oneSlide = <?php echo $settings->oneSlide; ?>;
 var $slickSlider_bb_verticalCarousel = <?php echo $settings->verticalCarousel; ?>;
 
-    $slickSlider_bb.on('init', function(event, slick){
-        var srcVideo = $("iframe", slick.$slides[0])[0].src;
-        isYouTubeVideo = srcVideo.includes('youtube');
-        isVimeoVideo = srcVideo.includes('vimeo');
+    <?php if ($settings->photoVideo === 'video') { ?>
+        $slickSlider_bb.on('init', function(event, slick){
+            var srcVideo = $("iframe", slick.$slides[0])[0].src;
+            isYouTubeVideo = srcVideo.includes('youtube');
+            isVimeoVideo = srcVideo.includes('vimeo');
 
-        function callback(isYouTubeVideo,isVimeoVideo){
-            // YouTube
-            if (isYouTubeVideo == true) {
-                $("iframe", slick.$slides[0])[0].contentWindow.postMessage('{"event":"command","func":"' + 'playVideo' + '","args":""}', '*');
+            function callback(isYouTubeVideo,isVimeoVideo){
+                // YouTube
+                if (isYouTubeVideo == true) {
+                    $("iframe", slick.$slides[0])[0].contentWindow.postMessage('{"event":"command","func":"' + 'playVideo' + '","args":""}', '*');
+                }
+
+                // Vimeo
+                if (isVimeoVideo == true) {
+                    var iframe = $("iframe", slick.$slides[0])[0];
+                    var player = $f(iframe);
+                    player.api('play');
+                }
+
             }
-
-            // Vimeo
-            if (isVimeoVideo == true) {
-                var iframe = $("iframe", slick.$slides[0])[0];
-                var player = $f(iframe);
-                player.api('play');
-            }
-
-        }
-         /* Attempt to auto play the first slide video. */
-        setTimeout(function() {
-            callback(isYouTubeVideo,isVimeoVideo);
-        }, 5000);
-    });
+             /* Attempt to auto play the first slide video. */
+            setTimeout(function() {
+                callback(isYouTubeVideo,isVimeoVideo);
+            }, 5000);
+        });
+    <?php } ?>
 
     /* we have to setup the slider based on the number of slides we're showing and scrolling */
     if ($slickSlider_bb_oneSlide == true) {
@@ -123,6 +125,7 @@ var $slickSlider_bb_verticalCarousel = <?php echo $settings->verticalCarousel; ?
 
     });
 
+    <?php if ($settings->photoVideo === 'video') { ?>
     /* ---------------------------------------------------------------------
      Pause videos when changing slides
      Author: Thomas McMahon
@@ -169,6 +172,7 @@ var $slickSlider_bb_verticalCarousel = <?php echo $settings->verticalCarousel; ?
         }
 
     });
+    <?php } ?>
 
 
 })(jQuery);
