@@ -24,30 +24,30 @@ add_action( 'init', 'fl_load_module_bbtwistermc');
 /**
  * Custom fields
  */
-function fl_my_custom_field( $name, $value, $field ) {
+function bbtwistermc_custom_field( $name, $value, $field ) {
     echo '<input type="text" class="text text-full" name="' . $name . '" value="' . $value . '" />';
 }
-add_action( 'fl_builder_control_my-custom-field', 'fl_my_custom_field', 1, 3 );
+add_action( 'fl_builder_control_my-custom-field', 'bbtwistermc_custom_field', 1, 3 );
 
 /**
  * Custom field styles and scripts
  */
-function fl_my_custom_field_assets() {
+function bbtwistermc_custom_field_assets() {
     if ( class_exists( 'FLBuilderModel' ) && FLBuilderModel::is_builder_active() ) {
         wp_enqueue_style( 'my-custom-fields', TMC_BB_URL . 'css/fields.css', array(), '' );
         wp_enqueue_script( 'my-custom-fields', TMC_BB_URL . 'js/fields.js', array(), '', true );
     }
 }
-add_action( 'wp_enqueue_scripts', 'fl_my_custom_field_assets' );
+add_action( 'wp_enqueue_scripts', 'bbtwistermc_custom_field_assets' );
 
 /* ---------------------------------------------------------------------
 Enqueue Vimeo Helper Script
 TODO: This should only be included if we have Vimeo modules
 ------------------------------------------------------------------------ */
-function fl_video_field_assets() {
+function bbtwistermc_video_field_helper() {
 		wp_enqueue_script( 'vimeo-helper', '//f.vimeocdn.com/js/froogaloop2.min.js', array(), '3', true );
 }
-add_action( 'wp_enqueue_scripts', 'fl_video_field_assets' );
+add_action( 'wp_enqueue_scripts', 'bbtwistermc_video_field_helper' );
 
 /**
  * Adds video attributes query strings to embedded YouTube videos
