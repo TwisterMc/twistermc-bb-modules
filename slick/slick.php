@@ -78,6 +78,7 @@ class BBSlickSlider extends FLBuilderModule {
 
 /**
  * Register the module and its form settings.
+ * TODO: Break out Photo vs Video settings
  */
 FLBuilder::register_module('BBSlickSlider', array(
     'general'       => array( // Tab
