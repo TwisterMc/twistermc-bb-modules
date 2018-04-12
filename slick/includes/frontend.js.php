@@ -98,9 +98,12 @@ var $slickSlider_bb_verticalCarousel = <?php echo $settings->verticalCarousel; ?
 
     });
 
+    /* ---------------------------------------------------------------------
+     Pause videos when changing slides
+     Author: Thomas McMahon
+     ------------------------------------------------------------------------ */
     $slickSlider_bb.on('beforeChange', function(event, slick, currentSlide, nextSlide){
         $('iframe').each(function(){
-
             var srcVideo = $(this)[0].src;
             isYouTubeVideo = srcVideo.includes('youtube');
             isVimeoVideo = srcVideo.includes('vimeo');
@@ -117,6 +120,29 @@ var $slickSlider_bb_verticalCarousel = <?php echo $settings->verticalCarousel; ?
                 player.api('pause');
             }
         });
+    });
+
+    /* ---------------------------------------------------------------------
+     Auto play current slide video
+     Author: Thomas McMahon
+     ------------------------------------------------------------------------ */
+    $slickSlider_bb.on('afterChange', function(event, slick, currentSlide, nextSlide){
+        var srcVideo = $("iframe", slick.$slides[currentSlide])[0].src;
+        isYouTubeVideo = srcVideo.includes('youtube');
+        isVimeoVideo = srcVideo.includes('vimeo');
+
+        // YouTube
+        if (isYouTubeVideo == true) {
+            $("iframe", slick.$slides[currentSlide])[0].contentWindow.postMessage('{"event":"command","func":"' + 'playVideo' + '","args":""}', '*');
+        }
+
+        // Vimeo
+        if (isVimeoVideo == true) {
+            var iframe = $("iframe", slick.$slides[currentSlide])[0];
+            var player = $f(iframe);
+            player.api('play');
+        }
+
     });
 
 
