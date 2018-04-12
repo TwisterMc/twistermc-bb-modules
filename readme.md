@@ -14,6 +14,7 @@ My first module is a Slick slider module. The carousels that come with Beaver Bu
 - [ ] Make it possible to have videos AND photos in one slideshow.
 - [ ] Maybe add a WYSIWYG field for creating content on slides.
 - [ ] Either use the internal or external Vimeo helper script and remove the other one.
+- [ ] Have Rich review everything always because he's wicked smart.
 
 ## Release Notes
 
