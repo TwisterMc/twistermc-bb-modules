@@ -96,7 +96,7 @@ FLBuilder::register_module('BBSlickSlider', array(
 		                ),
 		                'toggle'        => array(
 			                'photo'      => array(
-				                'fields'        => array( 'multiple_photos_field','showCaptions','oneSlide','forceImageSize' ),
+				                'fields'        => array( 'multiple_photos_field','showCaptions','oneSlide','forceImageSize','fade' ),
 			                ),
 			                'video'      => array(
 				                'fields'        => array( 'multiple_video_field' ),
