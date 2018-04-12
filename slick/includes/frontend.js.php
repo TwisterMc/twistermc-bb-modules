@@ -37,7 +37,6 @@ var $slickSlider_bb_verticalCarousel = <?php echo $settings->verticalCarousel; ?
         isVimeoVideo = srcVideo.includes('vimeo');
 
         function callback(isYouTubeVideo,isVimeoVideo){
-            console.log(isYouTubeVideo);
             // YouTube
             if (isYouTubeVideo == true) {
                 $("iframe", slick.$slides[0])[0].contentWindow.postMessage('{"event":"command","func":"' + 'playVideo' + '","args":""}', '*');
