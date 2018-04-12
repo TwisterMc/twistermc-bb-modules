@@ -92,7 +92,7 @@ FLBuilder::register_module('BBSlickSlider', array(
 		                'default'       => 'photo',
 		                'options'       => array(
 			                'photo'      => __('Photo', 'fl-builder'),
-			                'video'      => __('Video - YouTube/Vimeo', 'fl-builder')
+			                'video'      => __('Video - YouTube/Vimeo *Beta*', 'fl-builder')
 		                ),
 		                'toggle'        => array(
 			                'photo'      => array(
