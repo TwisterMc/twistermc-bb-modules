@@ -146,6 +146,15 @@ FLBuilder::register_module('BBSlickSlider', array(
 		                'label'         => __( 'Video URL', 'fl-builder' ),
 		                'multiple'      => true,
 	                ),
+	                'autoplay_videos' => array(
+		                'type'          => 'select',
+		                'label'         => __('Auto play videos?', 'fl-builder'),
+		                'default'       => 'false',
+		                'options'       => array(
+			                'true'      => __('Yes', 'fl-builder'),
+			                'false'      => __('No', 'fl-builder')
+		                )
+	                ),
                 )
             ),
             'multiplePhotoSettings'       => array( // Section

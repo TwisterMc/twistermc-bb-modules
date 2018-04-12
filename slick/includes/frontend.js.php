@@ -31,7 +31,7 @@ var $slickSlider_bb_slidesToScroll = <?php echo $settings->slidesToScroll; ?>;
 var $slickSlider_bb_oneSlide = <?php echo $settings->oneSlide; ?>;
 var $slickSlider_bb_verticalCarousel = <?php echo $settings->verticalCarousel; ?>;
 
-    <?php if ($settings->photoVideo === 'video' && !FLBuilderModel::is_builder_active()) { ?>
+    <?php if ($settings->photoVideo === 'video' && $settings->autoplay_videos === 'true' && !FLBuilderModel::is_builder_active()) { ?>
         $slickSlider_bb.on('init', function(event, slick){
             var srcVideo = $("iframe", slick.$slides[0])[0].src;
             isYouTubeVideo = srcVideo.includes('youtube');
@@ -154,6 +154,7 @@ var $slickSlider_bb_verticalCarousel = <?php echo $settings->verticalCarousel; ?
      Auto play current slide video
      Author: Thomas McMahon
      ------------------------------------------------------------------------ */
+    <?php if ($settings->autoplay_videos === 'true') { ?>
     $slickSlider_bb.on('afterChange', function(event, slick, currentSlide, nextSlide){
         var srcVideo = $("iframe", slick.$slides[currentSlide])[0].src;
         isYouTubeVideo = srcVideo.includes('youtube');
@@ -172,6 +173,7 @@ var $slickSlider_bb_verticalCarousel = <?php echo $settings->verticalCarousel; ?
         }
 
     });
+    <?php } ?>
     <?php } ?>
 
 
