@@ -61,11 +61,11 @@ Slick
 /* ---------------------------------------------------------------------
 Dots
 ------------------------------------------------------------------------ */
-.slick-dots {
+.slickModule_bb .slick-dots {
     text-align: center;
 }
 
-.slick-dots li {
+.slickModule_bb .slick-dots li {
     display: inline-block;
     padding: 5px 5px;
 }
@@ -104,19 +104,19 @@ Play/Pause
 Arrows
 ------------------------------------------------------------------------ */
 
-.slick-arrow,
-.slick-arrow:active,
-.slick-arrow:focus {
+.slickModule_bb .slick-arrow,
+.slickModule_bb .slick-arrow:active,
+.slickModule_bb .slick-arrow:focus {
     position: absolute;
     top: 40%;
     z-index: 10;
 }
 
-.slick-arrow.slick-prev {
+.slickModule_bb .slick-arrow.slick-prev {
     left: 10px;
 }
 
-.slick-arrow.slick-next {
+.slickModule_bb .slick-arrow.slick-next {
     right: 10px;
 }
 
