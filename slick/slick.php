@@ -99,7 +99,7 @@ FLBuilder::register_module('BBSlickSlider', array(
 				                'fields'        => array( 'multiple_photos_field','showCaptions','oneSlide','forceImageSize','fade' ),
 			                ),
 			                'video'      => array(
-				                'fields'        => array( 'multiple_video_field' ),
+				                'fields'        => array( 'multiple_video_field','autoplay_videos' ),
 			                ),
 		                )
 	                ),
@@ -139,7 +139,8 @@ FLBuilder::register_module('BBSlickSlider', array(
                         'options'       => array(
                             'true'      => __('Yes', 'fl-builder'),
                             'false'      => __('No', 'fl-builder')
-                        )
+                        ),
+	                    'help'          => 'Only used for Photos. There is a bug that shows it for videos.'
                     ),
 	                'multiple_video_field' => array(
 		                'type'          => 'text',
