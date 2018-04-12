@@ -8,6 +8,14 @@ My first module is a Slick slider module. The carousels that come with Beaver Bu
 
 ## Release Notes
 
+### Version 0.6.5
+* Much more video cleanup
+* Properly enqueued Vimeo helper script
+* Added auto play
+* Added setting for auto play
+* Removed un-necessary code
+* Renamed functions
+
 ### Version 0.6.4
 * Initial support for video slides.
 
