@@ -41,7 +41,7 @@ function fl_my_custom_field_assets() {
 add_action( 'wp_enqueue_scripts', 'fl_my_custom_field_assets' );
 
 /**
- * Adds the `autoplay` query string argument to embedded YouTube videos
+ * Adds video attributes query strings to embedded YouTube videos
  */
 add_filter('oembed_result','oembed_result', 10, 3);
 
@@ -49,6 +49,9 @@ function oembed_result($html, $url, $args) {
 	return str_replace("?feature=oembed", "?feature=oembed&loop=1&controls=0&showinfo=0&rel=0&enablejsapi=1", $html);
 }
 
+/**
+ * Adds video attributes query strings to embedded Vimeo videos
+ */
 add_filter('oembed_fetch_url','add_video_args',10,3);
 function add_video_args($provider, $url, $args) {
 	if ( strpos($provider, '//vimeo.com/') !== false ) {
