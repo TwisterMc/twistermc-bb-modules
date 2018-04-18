@@ -91,13 +91,24 @@ FLBuilder::register_module('BBSlickSlider', array(
 						),
 						'toggle'        => array(
 							'photo'      => array(
-								'fields'        => array( 'multiple_photos_field','showCaptions','oneSlide','forceImageSize','fade' ),
+								'tabs'          => array( 'imageSettings' ),
+								'fields'        => array( 'fade' ),
 							),
 							'video'      => array(
-								'fields'        => array( 'multiple_video_field','autoplay_videos' ),
+								'tabs'          => array( 'videoSettings' ),
 							),
-						)
+						),
 					),
+				),
+			),
+		),
+	),
+	'imageSettings'       => array( // Tab
+		'title'         => __( 'Images', 'fl-builder' ), // Tab title
+		'sections'      => array( // Tab Sections
+			'general'       => array( // Section
+				'title'         => __( 'Image Settings', 'fl-builder' ), // Section Title
+				'fields'        => array( // Section Fields
 					'multiple_photos_field'     => array(
 						'type'          => 'multiple-photos',
 						'label'         => __( 'Photos', 'fl-builder' ),
@@ -135,8 +146,17 @@ FLBuilder::register_module('BBSlickSlider', array(
 							'true'      => __( 'Yes', 'fl-builder' ),
 							'false'      => __( 'No', 'fl-builder' )
 						),
-						'help'          => 'Only used for Photos. There is a bug that shows it for videos.'
 					),
+				),
+			),
+		),
+	),
+	'videoSettings'       => array( // Tab
+		'title'         => __( 'Videos', 'fl-builder' ), // Tab title
+		'sections'      => array( // Tab Sections
+			'general'       => array( // Section
+				'title'         => __( 'Video Controls', 'fl-builder' ), // Section Title
+				'fields'        => array( // Section Fields
 					'multiple_video_field' => array(
 						'type'          => 'text',
 						'label'         => __( 'Video URL', 'fl-builder' ),
@@ -149,49 +169,11 @@ FLBuilder::register_module('BBSlickSlider', array(
 						'options'       => array(
 							'true'      => __( 'Yes', 'fl-builder' ),
 							'false'      => __( 'No', 'fl-builder' )
-						)
-					),
-				)
-			),
-			'multiplePhotoSettings'       => array( // Section
-				'title'         => 'Multiple Photo Settings', // Section Title
-				'fields'        => array( // Section Fields
-					'centerMode'   => array(
-						'type'          => 'select',
-						'label'         => __( 'Center Mode', 'fl-builder' ),
-						'default'       => 'false',
-						'options'       => array(
-							'true'      => __( 'Yes', 'fl-builder' ),
-							'false'      => __( 'No', 'fl-builder' )
 						),
-						'toggle'        => array(
-							'false'      => array(
-								'fields'        => array( 'slidesToScroll' ),
-							),
-						)
 					),
-					'variableWidth'   => array(
-						'type'          => 'select',
-						'label'         => __( 'Variable Width', 'fl-builder' ),
-						'default'       => 'false',
-						'options'       => array(
-							'true'      => __( 'Yes', 'fl-builder' ),
-							'false'      => __( 'No', 'fl-builder' )
-						)
-					),
-					'slidesToShow'   => array(
-						'type'          => 'text',
-						'label'         => __( 'Slides to Show', 'fl-builder' ),
-						'default'       => '1',
-					),
-					'slidesToScroll'   => array(
-						'type'          => 'text',
-						'label'         => __( 'Slides to Scroll', 'fl-builder' ),
-						'default'       => '1'
-					),
-				)
-			)
-		)
+				),
+			),
+		),
 	),
 	'toggle'       => array( // Tab
 		'title'         => __( 'Controls', 'fl-builder' ), // Tab title
@@ -369,6 +351,7 @@ FLBuilder::register_module('BBSlickSlider', array(
 					'fade'   => array(
 						'type'          => 'select',
 						'label'         => __( 'Fade', 'fl-builder' ),
+						'help'   => __( 'For images only.', 'fl-builder' ),
 						'default'       => 'false',
 						'options'       => array(
 							'true'      => __( 'Yes', 'fl-builder' ),
