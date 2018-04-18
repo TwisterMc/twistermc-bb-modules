@@ -8,7 +8,7 @@ My first module is a Slick slider module. The carousels that come with Beaver Bu
 
 ## TODO
 - [ ] Update Vimeo helper script to be enqueued only if needed.
-- [ ] Break out Photo vs Video settings so we can properly hide/show settings
+- [x] Break out Photo vs Video settings so we can properly hide/show settings
 - [ ] Add a field to put text on videos
 - [ ] Double check the slick scripts so we can avoid setting conflicts between video and photo slideshows.
 - [ ] Make it possible to have videos AND photos in one slideshow.
@@ -17,6 +17,10 @@ My first module is a Slick slider module. The carousels that come with Beaver Bu
 - [ ] Have Rich review everything always because he's wicked smart.
 
 ## Release Notes
+
+### Version 0.6.6
+* Separated the photo and video module settings so we don't have rogue settings. Well, mostly.
+* Updated some code to be closer to WordPress coding standards.
 
 ### Version 0.6.5
 * Much more video cleanup
