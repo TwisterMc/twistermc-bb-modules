@@ -21,15 +21,6 @@ function fl_load_module_bbtwistermc() {
 }
 add_action( 'init', 'fl_load_module_bbtwistermc' );
 
-/* ---------------------------------------------------------------------
-Enqueue Vimeo Helper Script
-TODO: This should only be included if we have Vimeo modules
------------------------------------------------------------------------- */
-function bbtwistermc_video_field_helper() {
-		wp_enqueue_script( 'vimeo-helper', '//f.vimeocdn.com/js/froogaloop2.min.js', array(), '3', true );
-}
-add_action( 'wp_enqueue_scripts', 'bbtwistermc_video_field_helper' );
-
 /**
  * Adds video attributes query strings to embedded YouTube videos
  */

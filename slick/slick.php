@@ -68,6 +68,16 @@ class BBSlickSlider extends FLBuilderModule {
 	 */
 	public function example_method() {
 	}
+
+	/* ---------------------------------------------------------------------
+	Enqueue Vimeo Helper Script
+	TODO: This should only be included if we have Vimeo modules
+	------------------------------------------------------------------------ */
+	public function enqueue_scripts() {
+		if ( $this->settings && 'video' === $this->settings->photoVideo ) {
+			wp_enqueue_script( 'vimeo-helper', '//f.vimeocdn.com/js/froogaloop2.min.js', array(), '3', true );
+		}
+	}
 }
 
 /**
