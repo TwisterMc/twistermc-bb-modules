@@ -22,12 +22,12 @@ var $slickSlider_bb_arrows = <?php echo $settings->arrows; ?>;
 var $slickSlider_bb_dots = <?php echo $settings->dots; ?>;
 var $slickSlider_bb_pauseOnHover = <?php echo $settings->pauseOnHover; ?>;
 var $slickSlider_bb_pauseOnDotsHover = <?php echo $settings->pauseOnDotsHover; ?>;
-var $slickSlider_bb_variableWidth = <?php echo $settings->variableWidth; ?>;
-var $slickSlider_bb_centerMode = <?php echo $settings->centerMode; ?>;
+var $slickSlider_bb_variableWidth = <?php echo ( isset( $settings->variableWidth ) ? $settings->variableWidth : 'false' ); ?>;
+var $slickSlider_bb_centerMode = <?php echo ( isset( $settings->centerMode ) ? $settings->centerMode : 'false' ); ?>;
 var $slickSlider_bb_fade = <?php echo $settings->fade; ?>;
 var $slickSlider_bb_infinite = <?php echo $settings->infinite; ?>;
-var $slickSlider_bb_slidesToShow = <?php echo $settings->slidesToShow; ?>;
-var $slickSlider_bb_slidesToScroll = <?php echo $settings->slidesToScroll; ?>;
+var $slickSlider_bb_slidesToShow = <?php echo ( isset( $settings->slidesToShow ) ? $settings->slidesToShow : 1 ); ?>;
+var $slickSlider_bb_slidesToScroll = <?php echo ( isset( $settings->slidesToScroll ) ? $settings->slidesToScroll : 1 ); ?>;
 var $slickSlider_bb_oneSlide = <?php echo $settings->oneSlide; ?>;
 var $slickSlider_bb_verticalCarousel = <?php echo $settings->verticalCarousel; ?>;
 
