@@ -18,6 +18,9 @@ My first module is a Slick slider module. The carousels that come with Beaver Bu
 
 ## Release Notes
 
+### Jun 4, 2020
+* Fixed an issue with undefinied variables. No version number bump at this time.
+
 ### Version 0.6.6
 * Separated the photo and video module settings so we don't have rogue settings. Well, mostly.
 * Updated some code to be closer to WordPress coding standards.
