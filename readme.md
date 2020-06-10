@@ -4,10 +4,19 @@ This is a free plugin for Beaver Builder that I'll be adding my custom modules t
 
 ## Modules
 ### Slick Slider
-My first module is a Slick slider module. The carousels that come with Beaver Builder are OK, but they leave a lot to be desired. That's why I'm integrating Slick.
+Integrating [Slick Slider](https://kenwheeler.github.io/slick/). Allows you to add photo or video sliders with lots of options.
+
+### Full Image
+Forces an image to fill 100% of the width. Even if needs to be scaled up.
+
+### Download Button
+Allows you to select a PDF from the media library and make it available for users to download.
+
+### YouTube
+YouTube module that just accepts a YouTube url and embeds the video on the page. Easy for clients.
 
 ## TODO
-- [] Update Vimeo helper script to be enqueued only if needed. / Half done, only shows with video sliders now.
+- [ ] Update Vimeo helper script to be enqueued only if needed. / Half done, only shows with video sliders now.
 - [x] Break out Photo vs Video settings so we can properly hide/show settings
 - [ ] Add a field to put text on videos
 - [ ] Double check the slick scripts so we can avoid setting conflicts between video and photo slideshows.
@@ -17,6 +26,11 @@ My first module is a Slick slider module. The carousels that come with Beaver Bu
 - [ ] Have Rich review everything always because he's wicked smart.
 
 ## Release Notes
+
+### Version 0.6.8
+* Added a Download module for selecting a PDF from the media library and making it available for users to download.
+* Added a YouTube module that just accepts a YouTube url and embeds the video on the page. Easy for clients.
+* ReadMe Updates.
 
 ### Version 0.6.7
 * Fixing major issues with when adding the Slick module to the page the first time.
