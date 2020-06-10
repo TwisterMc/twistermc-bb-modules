@@ -18,8 +18,10 @@ My first module is a Slick slider module. The carousels that come with Beaver Bu
 
 ## Release Notes
 
-### Jun 4, 2020
-* Fixed an issue with undefinied variables. No version number bump at this time.
+### Version 0.6.7
+* Fixing major issues with when adding the Slick module to the page the first time.
+* Adding defaults for most all Slick module settings.
+* Fixing issues that prevented some Slick settings from showing.
 
 ### Version 0.6.6
 * Separated the photo and video module settings so we don't have rogue settings. Well, mostly.

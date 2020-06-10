@@ -12,7 +12,7 @@ class BBSlickSlider extends FLBuilderModule {
 	 * @method __construct
 	 */
 	public function __construct() {
-		parent::__construct(array(
+		parent::__construct( array(
 			'name'          => __( 'Slick', 'fl-builder' ),
 			'description'   => __( 'Slick Slider for BeaverBuilder', 'fl-builder' ),
 			'category'      => __( 'Advanced Modules', 'fl-builder' ),
@@ -20,7 +20,7 @@ class BBSlickSlider extends FLBuilderModule {
 			'url'           => TMC_BB_URL . 'slick/',
 			'editor_export' => true, // Defaults to true and can be omitted.
 			'enabled'       => true, // Defaults to true and can be omitted.
-		));
+		) );
 
 		/**
 		 * Use these methods to enqueue css and js already
@@ -34,18 +34,6 @@ class BBSlickSlider extends FLBuilderModule {
 		$this->add_css( 'slick-slider-css-cdn', '//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css', array(), '' );
 		$this->add_js( 'slick-slider-js-cdn', TMC_BB_URL . '/slick/js/slick.js', array( 'jquery' ), '', false );
 
-	}
-
-	/**
-	 * Use this method to work with settings data before
-	 * it is saved. You must return the settings object.
-	 *
-	 * @method update
-	 * @param $settings {object}
-	 */
-	public function update( $settings ) {
-		$settings->textarea_field .= ' - this text was appended in the update method.';
-		return $settings;
 	}
 
 	/**
@@ -135,6 +123,7 @@ FLBuilder::register_module('BBSlickSlider', array(
 					'oneSlide'   => array(
 						'type'          => 'select',
 						'label'         => __( 'Show # Slides', 'fl-builder' ),
+						'default'       => 'true',
 						'options'       => array(
 							'true'      => __( 'One', 'fl-builder' ),
 							'false'      => __( 'Multiple', 'fl-builder' )
@@ -156,6 +145,44 @@ FLBuilder::register_module('BBSlickSlider', array(
 							'true'      => __( 'Yes', 'fl-builder' ),
 							'false'      => __( 'No', 'fl-builder' )
 						),
+					),
+				),
+			),
+			'multiplePhotoSettings'       => array( // Section
+				'title'         => 'Multiple Photo Settings', // Section Title
+				'fields'        => array( // Section Fields
+					'centerMode'   => array(
+						'type'          => 'select',
+						'label'         => __( 'Center Mode', 'fl-builder' ),
+						'default'       => 'false',
+						'options'       => array(
+							'true'      => __( 'Yes', 'fl-builder' ),
+							'false'      => __( 'No', 'fl-builder' )
+						),
+						'toggle'        => array(
+							'false'      => array(
+								'fields'        => array( 'slidesToScroll' ),
+							),
+						)
+					),
+					'variableWidth'   => array(
+						'type'          => 'select',
+						'label'         => __( 'Variable Width', 'fl-builder' ),
+						'default'       => 'false',
+						'options'       => array(
+							'true'      => __( 'Yes', 'fl-builder' ),
+							'false'      => __( 'No', 'fl-builder' )
+						)
+					),
+					'slidesToShow'   => array(
+						'type'          => 'text',
+						'label'         => __( 'Slides to Show', 'fl-builder' ),
+						'default'       => '1',
+					),
+					'slidesToScroll'   => array(
+						'type'          => 'text',
+						'label'         => __( 'Slides to Scroll', 'fl-builder' ),
+						'default'       => '1'
 					),
 				),
 			),
@@ -304,7 +331,8 @@ FLBuilder::register_module('BBSlickSlider', array(
 					'dotBackgroundColor'   => array(
 						'type'          => 'color',
 						'label'         => __( 'Dot Background Color', 'fl-builder' ),
-						'show_reset'    => true
+						'show_reset'    => true,
+						'default'       => '000000',
 					),
 					'dotActiveColor'   => array(
 						'type'          => 'color',

@@ -120,7 +120,13 @@ Arrows
 	right: 10px;
 }
 
-<?php if ($settings->forceImageSize == 'true' && $settings->oneSlide == 'false') { ?>
+<?php if ($settings->forceImageSize == 'false') { ?>
+.fl-node-<?php echo $id; ?> .slick-slide img {
+	object-fit: contain;
+}
+<?php } ?>
+
+<?php if ($settings->forceImageSize == 'true' ) { ?>
 /* ---------------------------------------------------------------------
 Force Image Size
 ------------------------------------------------------------------------ */
